@@ -1,153 +1,373 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <!-- Basic page setup -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paula Dastres | About Me</title>
 
-  <!-- Load Bootstrap CSS and Font Awesome icons -->
-  <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
-  <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
-  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+  <!-- Bootstrap and icons -->
+  <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet">
+  <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet">
+  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet">
 
-  <!-- General styling for layout and formatting -->
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
-  .main-container {
-    max-width: 940px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-  }
+    body {
+      color: #333;
+    }
 
-  .main-container a {
-    color: #333;
-    text-decoration: none;
-  }
+    .main-container {
+      max-width: 940px;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 20px;
+    }
 
-  .main-container a:hover {
-    color: #000;
-    text-decoration: underline;
-  }
+    .main-container a {
+      color: #333;
+      text-decoration: none;
+    }
 
-  img { max-width: 100%; }
-  h1 { font-size: 34px; }
-  h1.title { font-size: 38px; }
-  h2 { font-size: 24px; margin-top: 30px; }
-  h3 { font-size: 24px; }
-  p { font-size: 16px; line-height: 1.6; }
+    .main-container a:hover {
+      color: #000;
+      text-decoration: underline;
+    }
 
-  .navbar.navbar-default {
-    background-color: transparent;
-    border: none;
-    z-index: 1000;
-  }
+    img {
+      max-width: 100%;
+    }
 
-  .navbar.navbar-default .navbar-brand,
-  .navbar.navbar-default .navbar-nav > li > a {
-    color: #333;
-  }
+    h1 {
+      font-size: 34px;
+    }
 
-  .navbar.navbar-default .navbar-nav > li > a:hover {
-    color: #000;
-  }
+    h1.title {
+      margin-top: 40px;
+      font-size: 38px;
+    }
 
-  .spacer {
-    height: 60px;
-  }
-</style>
+    h2 {
+      margin-top: 30px;
+      font-size: 24px;
+    }
 
+    h3 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
+    .navbar.navbar-default {
+      background-color: white;
+      border: none;
+      border-bottom: 1px solid #eee;
+      z-index: 1000;
+    }
+
+    .navbar.navbar-default .navbar-brand,
+    .navbar.navbar-default .navbar-nav > li > a {
+      color: #333;
+    }
+
+    .navbar.navbar-default .navbar-nav > li > a:hover,
+    .navbar.navbar-default .navbar-nav > li > a:focus {
+      color: #000;
+    }
+
+    .navbar-default .navbar-toggle {
+      border-color: #aaa;
+    }
+
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+      background-color: #f5f5f5;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+      background-color: #333;
+    }
+
+    .spacer {
+      height: 60px;
+    }
+
+    /* Profile introduction */
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 80px;
+    }
+
+    .profile-photo {
+      flex: 0 0 260px;
+      margin: 10px 30px 10px 0;
+      text-align: left;
+    }
+
+    .profile-photo img {
+      display: block;
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border: 3px solid #ccc;
+      border-radius: 50%;
+    }
+
+    .profile-info {
+      flex: 1 1 300px;
+      max-width: 600px;
+      margin: 10px;
+      padding-top: 60px;
+    }
+
+    .profile-info h1 {
+      margin-top: 0;
+    }
+
+    .profile-info p {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    /* Phone and tablet layout */
+    @media (max-width: 767px) {
+      .main-container {
+        width: 100%;
+        padding: 15px 20px;
+      }
+
+      .navbar-header {
+        float: none;
+      }
+
+      .navbar-toggle {
+        display: block;
+        margin-right: 15px;
+      }
+
+      .navbar-collapse {
+        overflow-x: visible;
+        background-color: white;
+        border-top: 1px solid #ddd;
+        box-shadow: none;
+      }
+
+      .navbar-collapse.collapse {
+        display: none !important;
+      }
+
+      .navbar-collapse.collapse.in {
+        display: block !important;
+      }
+
+      .navbar-nav {
+        float: none !important;
+        margin: 0;
+      }
+
+      .navbar-nav > li {
+        float: none;
+      }
+
+      .navbar-nav > li > a {
+        padding: 14px 20px;
+      }
+
+      .navbar-right {
+        float: none !important;
+        margin: 0;
+      }
+
+      .spacer {
+        height: 50px;
+      }
+
+      .intro-section {
+        display: block;
+        margin-top: 35px;
+        text-align: center;
+      }
+
+      .profile-photo {
+        width: 100%;
+        margin: 0 auto 25px;
+        text-align: center;
+      }
+
+      .profile-photo img {
+        width: 220px;
+        height: 220px;
+        margin: 0 auto;
+      }
+
+      .profile-info {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding-top: 0;
+        text-align: center;
+      }
+
+      .profile-info h1 {
+        font-size: 32px;
+      }
+
+      h1.title {
+        margin-top: 35px;
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- Begin main page container -->
-  <div class="container-fluid main-container">
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
 
-    <!-- Navigation Bar (fixed at top of page) -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <!-- Mobile navbar collapse button -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-          </button>
-          <!-- Brand name -->
-          <a class="navbar-brand" href="index.html">Paula Dastres</a>
-        </div>
-        <!-- Navigation menu links -->
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">About Me</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="media.html">In the Media</a></li>
-            <li><a href="teaching.html">Teaching</a></li>
-            <li><a href="files/paula_dastres_cv.pdf">CV</a></li>
-          </ul>
-          <!-- Email icon on the right -->
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="mailto:dastresgalla@wisc.edu"><span class="fa fa-envelope fa-lg"></span></a></li>
-          </ul>
-        </div>
+      <div class="navbar-header">
+        <!-- Mobile navigation button -->
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#navbar"
+          aria-expanded="false"
+          aria-controls="navbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="index.html">Paula Dastres</a>
       </div>
+
+      <!-- Navigation links -->
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="index.html">About Me</a>
+          </li>
+          <li>
+            <a href="research.html">Research</a>
+          </li>
+          <li>
+            <a href="media.html">In the Media</a>
+          </li>
+          <li>
+            <a href="teaching.html">Teaching</a>
+          </li>
+          <li>
+            <a href="files/paula_dastres_cv.pdf">CV</a>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a
+              href="mailto:dastresgalla@wisc.edu"
+              aria-label="Email Paula Dastres"
+            >
+              <span class="fa fa-envelope fa-lg" aria-hidden="true"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
     </div>
+  </nav>
+
+  <!-- Main page container -->
+  <main class="container-fluid main-container">
+
     <div class="spacer"></div>
-    
-    <!-- Intro section with circular image and vertically centered text -->
-    <div style="display: flex; align-items: center; justify-content: flex-start; margin-top: 80px; flex-wrap: wrap;">
 
-      <!-- Circular profile image -->
-      <div style="flex: 0 0 260px; text-align: left; margin: 10px 30px 10px 0px;">
-        <img src="files/banner.jpeg" 
-             alt="Profile photo"
-             style="width: 260px; height: 260px; border-radius: 50%; object-fit: cover; border: 3px solid #ccc;">
+    <!-- Profile introduction -->
+    <section class="intro-section">
+
+      <div class="profile-photo">
+        <img
+          src="files/banner.jpeg"
+          alt="Paula Dastres"
+        >
       </div>
 
-      <!-- Name and info -->
-      <div style="flex: 1 1 300px; max-width: 600px; margin: 10px;">
-        <div style="margin-top: 60px;">
-          <h1 style="margin-top: 0;">Paula Dastres</h1>
-          <p style="font-size: 16px; margin-bottom: 5px;">Economics PhD Student</p>
-          <p style="font-size: 16px; margin-bottom: 5px;">University of Wisconsin - Madison</p>
-          <p style="font-size: 16px;">Development · Gender Inequality · Labor</p>
-        </div>
+      <div class="profile-info">
+        <h1>Paula Dastres</h1>
+        <p>Economics PhD Student</p>
+        <p>University of Wisconsin–Madison</p>
+        <p>Labor · Public Economics · Gender Inequality</p>
       </div>
-    </div>
 
-    <!-- Section header -->
-      <h1 class="title toc-ignore">About Me</h1>
+    </section>
 
-  <!-- About Me paragraph -->
-<p>Welcome! I'm a PhD student in Economics at the University of Wisconsin-Madison. My research interests lie at the intersection of labor economics, public economics, and gender inequality. 
-  I am interested in how institutions, social policies, and labor market structures shape individual decisions and economic opportunities, particularly for women and other groups facing 
-  barriers to labor market participation.</p>
+    <!-- About Me -->
+    <section>
+      <h1 class="title">About Me</h1>
 
-<p>My goal is to conduct policy relevant research that contributes both to academic debates and to the design and evaluation of public policy. I am especially interested in questions related 
-  to labor supply, occupational choice, persistence, discrimination, and the unintended consequences of social and labor market policies.</p>
+      <p>
+        Welcome! I'm a PhD student in Economics at the University of
+        Wisconsin–Madison. My research interests lie at the intersection of
+        labor economics, public economics, and gender inequality. I am
+        interested in how institutions, social policies, and labor market
+        structures shape individual decisions and economic opportunities,
+        particularly for women and other groups facing barriers to labor
+        market participation.
+      </p>
 
-<p>Methodologically, I am interested in combining economic theory and empirical analysis to study these questions. My interests include field experiments and behavioral economics, as well as the 
-  use of observational data and quantitative models to understand how individuals and firms respond to policy and institutional constraints.</p>
+      <p>
+        My goal is to conduct policy-relevant research that contributes both
+        to academic debates and to the design and evaluation of public policy.
+        I am especially interested in questions related to labor supply,
+        occupational choice, persistence, discrimination, and the unintended
+        consequences of social and labor market policies.
+      </p>
 
-<p>Prior to my PhD, I completed a Master of Arts with a Certificate in Research Methods at the University of Chicago and a Master of Science in Public Policy at Universidad Adolfo Ibáñez, graduating with honors from both programs.</p>
+      <p>
+        Methodologically, I am interested in combining economic theory and
+        empirical analysis to study these questions. My interests include
+        field experiments and behavioral economics, as well as the use of
+        observational data and quantitative models to understand how
+        individuals and firms respond to policy and institutional constraints.
+      </p>
 
-</div> <!-- End main-container -->
+      <p>
+        Prior to my PhD, I completed a Master of Arts with a Certificate in
+        Research Methods at the University of Chicago and a Master of Science
+        in Public Policy at Universidad Adolfo Ibáñez, graduating with honors
+        from both programs.
+      </p>
+    </section>
 
-  <!-- Load required scripts -->
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  </main>
+
+  <!-- Scripts: jQuery must load before Bootstrap -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
   <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
   <script>
     if (window.hljs) {
-      hljs.configure({languages: []});
+      hljs.configure({ languages: [] });
       hljs.initHighlightingOnLoad();
     }
   </script>
+
 </body>
 </html>
-
