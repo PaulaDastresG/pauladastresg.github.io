@@ -1,57 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Teaching - Paula Dastres</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teaching | Paula Dastres</title>
 
-  <!-- Load Bootstrap CSS and Font Awesome icons -->
-  <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
-  <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
-  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+  <!-- Bootstrap and icons -->
+  <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet">
+  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet">
 
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
     }
 
-    .main-container a {
-  color: #333;
-  text-decoration: none;
-  }
-
-  .main-container a:hover {
-  color: #000;
-  text-decoration: underline;
-  }
+    body {
+      color: #333;
+    }
 
     .main-container {
       max-width: 940px;
-      margin-left: auto;
       margin-right: auto;
+      margin-left: auto;
       padding: 20px;
     }
 
-    .main-container ul li {
-      font-size: 17px;
-      line-height: 1.6;
-      margin-bottom: 8px;   /* espacio entre bullets */
+    .main-container a {
+      color: #333;
+      text-decoration: none;
     }
 
+    .main-container a:hover,
+    .main-container a:focus {
+      color: #000;
+      text-decoration: underline;
+    }
 
-    img { max-width: 100%; }
-    h1 { font-size: 34px; }
-    h1.title { font-size: 38px; }
-    h2 { font-size: 24px; margin-top: 30px; }
-    h3 { font-size: 24px; }
-    p { font-size: 16px; line-height: 1.6; }
+    h1 {
+      margin-top: 40px;
+      font-size: 34px;
+    }
 
-    /* Navbar matches index.html */
+    h2 {
+      margin-top: 35px;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .main-container ul {
+      padding-left: 24px;
+    }
+
+    .main-container ul li {
+      margin-bottom: 8px;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
     .navbar.navbar-default {
-      background-color: transparent;
+      background-color: white;
       border: none;
+      border-bottom: 1px solid #eee;
       z-index: 1000;
     }
 
@@ -60,67 +77,210 @@
       color: #333;
     }
 
-    .navbar.navbar-default .navbar-nav > li > a:hover {
+    .navbar.navbar-default .navbar-nav > li > a:hover,
+    .navbar.navbar-default .navbar-nav > li > a:focus {
       color: #000;
     }
 
-    /* Spacer pushes content below navbar */
+    .navbar-default .navbar-toggle {
+      border-color: #aaa;
+    }
+
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+      background-color: #f5f5f5;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+      background-color: #333;
+    }
+
     .spacer {
       height: 60px;
+    }
+
+    @media (max-width: 767px) {
+      .main-container {
+        width: 100%;
+        padding: 15px 20px;
+      }
+
+      .navbar-header {
+        float: none;
+      }
+
+      .navbar-toggle {
+        display: block;
+        margin-right: 15px;
+      }
+
+      .navbar-collapse {
+        overflow-x: visible;
+        background-color: white;
+        border-top: 1px solid #ddd;
+        box-shadow: none;
+      }
+
+      .navbar-collapse.collapse {
+        display: none !important;
+      }
+
+      .navbar-collapse.collapse.in {
+        display: block !important;
+      }
+
+      .navbar-nav {
+        float: none !important;
+        margin: 0;
+      }
+
+      .navbar-nav > li {
+        float: none;
+      }
+
+      .navbar-nav > li > a {
+        padding: 14px 20px;
+      }
+
+      .navbar-right {
+        float: none !important;
+        margin: 0;
+      }
+
+      .spacer {
+        height: 50px;
+      }
+
+      h1 {
+        margin-top: 30px;
+        font-size: 32px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .main-container ul li {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 
 <body>
 
- <!-- Navigation Bar -->
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
+
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#navbar"
+          aria-expanded="false"
+          aria-controls="navbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
+
         <a class="navbar-brand" href="index.html">Paula Dastres</a>
       </div>
+
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="index.html">About Me</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="media.html">In the Media</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="files/paula_dastres_cv.pdf">CV</a></li>
+          <li>
+            <a href="index.html">About Me</a>
+          </li>
+          <li>
+            <a href="research.html">Research</a>
+          </li>
+          <li>
+            <a href="media.html">In the Media</a>
+          </li>
+          <li class="active">
+            <a href="teaching.html">Teaching</a>
+          </li>
+          <li>
+            <a href="files/paula_dastres_cv.pdf">CV</a>
+          </li>
         </ul>
+
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="mailto:dastresgalla@wisc.edu"><span class="fa fa-envelope fa-lg"></span></a></li>
+          <li>
+            <a
+              href="mailto:dastresgalla@wisc.edu"
+              aria-label="Email Paula Dastres"
+            >
+              <span class="fa fa-envelope fa-lg" aria-hidden="true"></span>
+            </a>
+          </li>
         </ul>
       </div>
-    </div>
-  </div>
 
-  <!-- Push content below fixed navbar -->
+    </div>
+  </nav>
+
   <div class="spacer"></div>
 
-<!-- Main Content -->
-<div class="container-fluid main-container">
-  <h1>Teaching</h1>
+  <!-- Main content -->
+  <main class="container-fluid main-container">
 
-<h2>Lecturer</h2>
+    <h1>Teaching</h1>
 
-<ul>
-  <li>Microeconomics II (University Adolfo Ibáñez, Fall 2022)</li>
-</ul>
+    <section>
+      <h2>Lecturer</h2>
 
-<h2>Teaching Assistant</h2>
+      <ul>
+        <li>
+          Microeconomics II, Universidad Adolfo Ibáñez, Fall 2022
+        </li>
+      </ul>
+    </section>
 
-<ul>
-  <li>ECON 101: Principles of Microeconomics (University of Wisconsin–Madison, 2025)</li>
-  <li>PPHA 31941: Behavioral Science for Public Policy (University of Chicago, 2025)</li>
-  <li>PPHA 41740: Gender and Policy (University of Chicago, 2025)</li>
-  <li>Labor Economics (University Adolfo Ibáñez, 2022)</li>
-  <li>Introduction to Public Policy (University Adolfo Ibáñez, 2022)</li>
-  <li>Introduction to Microeconomics (University Adolfo Ibáñez, 2022)</li>
-  <li>Ethics and Public Policy (University Adolfo Ibáñez, 2022)</li>
-  <li>Political Theory (University Adolfo Ibáñez, 2022)</li>
-  <li>Contemporary Liberalism (University Adolfo Ibáñez, 2020)</li>
-</ul>
-</div>
+    <section>
+      <h2>Teaching Assistant</h2>
+
+      <ul>
+        <li>
+          ECON 101: Principles of Microeconomics, University of Wisconsin–Madison, 2025–2026
+        </li>
+        <li>
+          PPHA 31941: Behavioral Science for Public Policy, University of Chicago, 2025
+        </li>
+        <li>
+          PPHA 41740: Gender and Policy, University of Chicago, 2025
+        </li>
+        <li>
+          Labor Economics, Universidad Adolfo Ibáñez, 2022
+        </li>
+        <li>
+          Introduction to Public Policy, Universidad Adolfo Ibáñez, 2022
+        </li>
+        <li>
+          Introduction to Microeconomics, Universidad Adolfo Ibáñez, 2022
+        </li>
+        <li>
+          Ethics and Public Policy, Universidad Adolfo Ibáñez, 2022
+        </li>
+        <li>
+          Political Theory, Universidad Adolfo Ibáñez, 2022
+        </li>
+        <li>
+          Contemporary Liberalism, Universidad Adolfo Ibáñez, 2020
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Scripts: jQuery must load before Bootstrap -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+
+</body>
+</html>
