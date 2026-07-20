@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>In the Media - Paula Dastres</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>In the Media | Paula Dastres</title>
 
-    <!-- Load Bootstrap CSS and Font Awesome icons -->
-  <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
-  <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
-  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
-  
+  <!-- Bootstrap and icons -->
+  <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet">
+  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet">
+
   <style>
-    html, body { margin: 0; padding: 0; }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      color: #333;
+    }
 
     .main-container {
       max-width: 940px;
@@ -20,13 +27,37 @@
       padding: 20px;
     }
 
-    h1 { font-size: 34px; }
-    h2 { font-size: 24px; margin-top: 30px; }
-    p { font-size: 16px; line-height: 1.6; }
+    h1 {
+      font-size: 34px;
+      margin-top: 40px;
+    }
 
+    h2 {
+      font-size: 24px;
+      margin-top: 35px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    /* Navigation bar */
     .navbar.navbar-default {
-      background-color: transparent;
+      background-color: white;
       border: none;
+      border-bottom: 1px solid #eee;
       z-index: 1000;
     }
 
@@ -35,104 +66,273 @@
       color: #333;
     }
 
-    .navbar.navbar-default .navbar-nav > li > a:hover {
+    .navbar.navbar-default .navbar-nav > li > a:hover,
+    .navbar.navbar-default .navbar-nav > li > a:focus {
       color: #000;
+    }
+
+    .navbar-default .navbar-toggle {
+      border-color: #aaa;
+    }
+
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+      background-color: #f5f5f5;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+      background-color: #333;
     }
 
     .spacer {
       height: 60px;
     }
 
-    a {
-      color: #333;
-      text-decoration: none;
+    .media-entry {
+      margin-bottom: 24px;
     }
 
-    a:hover {
-      color: #000;
-      text-decoration: underline;
+    .publication-name {
+      margin-top: 3px;
+      font-style: italic;
+    }
+
+    @media (max-width: 767px) {
+      .main-container {
+        width: 100%;
+        padding: 15px 20px;
+      }
+
+      .navbar-header {
+        float: none;
+      }
+
+      .navbar-toggle {
+        display: block;
+        margin-right: 15px;
+      }
+
+      .navbar-collapse {
+        overflow-x: visible;
+        background-color: white;
+        border-top: 1px solid #ddd;
+        box-shadow: none;
+      }
+
+      .navbar-collapse.collapse {
+        display: none !important;
+      }
+
+      .navbar-collapse.collapse.in {
+        display: block !important;
+      }
+
+      .navbar-nav {
+        float: none !important;
+        margin: 0;
+      }
+
+      .navbar-nav > li {
+        float: none;
+      }
+
+      .navbar-nav > li > a {
+        padding: 14px 20px;
+      }
+
+      .navbar-right {
+        float: none !important;
+        margin: 0;
+      }
+
+      .spacer {
+        height: 50px;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-top: 30px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Navigation Bar -->
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
+
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#navbar"
+          aria-expanded="false"
+          aria-controls="navbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
+
         <a class="navbar-brand" href="index.html">Paula Dastres</a>
       </div>
+
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="index.html">About Me</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="media.html">In the Media</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="files/paula_dastres_cv.pdf">CV</a></li>
+          <li>
+            <a href="index.html">About Me</a>
+          </li>
+          <li>
+            <a href="research.html">Research</a>
+          </li>
+          <li class="active">
+            <a href="media.html">In the Media</a>
+          </li>
+          <li>
+            <a href="teaching.html">Teaching</a>
+          </li>
+          <li>
+            <a href="files/paula_dastres_cv.pdf">CV</a>
+          </li>
         </ul>
+
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="mailto:dastresgalla@wisc.edu"><span class="fa fa-envelope fa-lg"></span></a></li>
+          <li>
+            <a
+              href="mailto:dastresgalla@wisc.edu"
+              aria-label="Email Paula Dastres"
+            >
+              <span class="fa fa-envelope fa-lg" aria-hidden="true"></span>
+            </a>
+          </li>
         </ul>
       </div>
-    </div>
-  </div>
 
-  <!-- Spacer for fixed navbar -->
+    </div>
+  </nav>
+
   <div class="spacer"></div>
 
-<!-- Main Content -->
-<div class="container-fluid main-container">
-  <h1>In the Media</h1>
+  <!-- Main content -->
+  <main class="container-fluid main-container">
 
-  <h2>Opinion Columns</h2>
-  <p><strong>
-    <a href="https://www.latercera.com/opinion/noticia/politicas-habitacionales-con-enfoque-de-genero-una-tarea-urgente/URDGTNCPAJAZ3AFN7C7TBKOOJY/" target="_blank">
-      Housing Policies with a Gender Lens: An Urgent Task (Spanish)
-    </a>
-  </strong><br>
-  Published in *La Tercera* (Chile)
-  </p>
+    <h1>In the Media</h1>
 
-  <h2 style="margin-top: 40px;">Mentions</h2>
-  <p><strong>
-    <a href="https://www.puroperiodismo.cl/crisis-economica-y-deficit-habitacional-los-factores-que-han-agudizado-la-expansion-de-campamentos-y-tomas-en-chile/" target="_blank">
-      Economic Crisis and Housing Deficit: The Factors Behind the Expansion of Informal Settlements (Spanish)
-    </a>
-  </strong><br>
-  *Puroperiodismo.cl*
-  </p>
+    <section>
+      <h2>Opinion Columns</h2>
 
-  <p><strong>
-    <a href="https://www.pauta.cl/ciudad/2022/03/12/campamentos-mujeres-techo-falta-de-vivienda-estudio.html" target="_blank">
-      Women in Informal Settlements: A Study on Housing Shortages (Spanish)
-    </a>
-  </strong><br>
-  *Radio Pauta*
-  </p>
+      <div class="media-entry">
+        <p>
+          <strong>
+            <a
+              href="https://www.latercera.com/opinion/noticia/politicas-habitacionales-con-enfoque-de-genero-una-tarea-urgente/URDGTNCPAJAZ3AFN7C7TBKOOJY/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Housing Policies with a Gender Lens: An Urgent Task
+            </a>
+          </strong>
+          <br>
+          <span class="publication-name">La Tercera, Chile</span>
+          <br>
+          Spanish
+        </p>
+      </div>
+    </section>
 
-  <h2 style="margin-top: 40px;">Interviews</h2>
-  <p><strong>
-    <a href="https://cooperativapodcast.cl/hablando-de?ts=20220309170644&categoria=hablando-de" target="_blank">
-      Interview on Housing and Gender Inequality (Spanish)
-    </a>
-  </strong><br>
-  *Radio Cooperativa – Podcast*
-  </p>
+    <section>
+      <h2>Mentions</h2>
 
-  <p><strong>
-    <a href="https://www.pauta.cl/ciudad/programa-plaza-pauta/2022/03/11/plaza-pauta-11-de-marzo-2022.html" target="_blank">
-      Radio Interview on Informal Settlements and Women’s Lives (Spanish)
-    </a>
-  </strong><br>
-  *Plaza Pauta – Radio Pauta*
-  </p>
-</div>
+      <div class="media-entry">
+        <p>
+          <strong>
+            <a
+              href="https://www.puroperiodismo.cl/crisis-economica-y-deficit-habitacional-los-factores-que-han-agudizado-la-expansion-de-campamentos-y-tomas-en-chile/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Economic Crisis and Housing Deficit: The Factors Behind the Expansion of Informal Settlements
+            </a>
+          </strong>
+          <br>
+          <span class="publication-name">Puroperiodismo.cl</span>
+          <br>
+          Spanish
+        </p>
+      </div>
 
+      <div class="media-entry">
+        <p>
+          <strong>
+            <a
+              href="https://www.pauta.cl/ciudad/2022/03/12/campamentos-mujeres-techo-falta-de-vivienda-estudio.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Women in Informal Settlements: A Study on Housing Shortages
+            </a>
+          </strong>
+          <br>
+          <span class="publication-name">Radio Pauta</span>
+          <br>
+          Spanish
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Interviews</h2>
+
+      <div class="media-entry">
+        <p>
+          <strong>
+            <a
+              href="https://cooperativapodcast.cl/hablando-de?ts=20220309170644&categoria=hablando-de"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Interview on Housing and Gender Inequality
+            </a>
+          </strong>
+          <br>
+          <span class="publication-name">Radio Cooperativa Podcast</span>
+          <br>
+          Spanish
+        </p>
+      </div>
+
+      <div class="media-entry">
+        <p>
+          <strong>
+            <a
+              href="https://www.pauta.cl/ciudad/programa-plaza-pauta/2022/03/11/plaza-pauta-11-de-marzo-2022.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Radio Interview on Informal Settlements and Women’s Lives
+            </a>
+          </strong>
+          <br>
+          <span class="publication-name">Plaza Pauta, Radio Pauta</span>
+          <br>
+          Spanish
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts: jQuery must load before Bootstrap -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 
 </body>
 </html>
-
