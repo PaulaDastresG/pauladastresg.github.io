@@ -1,50 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Research - Paula Dastres</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research | Paula Dastres</title>
 
-  <!-- Load Bootstrap CSS and Font Awesome icons -->
-  <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
-  <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
-  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+  <!-- Bootstrap and icons -->
+  <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet">
+  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet">
 
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
     }
 
-    .main-container a {
-  color: #333;
-  text-decoration: none;
-  }
-
-  .main-container a:hover {
-  color: #000;
-  text-decoration: underline;
-  }
+    body {
+      color: #333;
+    }
 
     .main-container {
       max-width: 940px;
-      margin-left: auto;
       margin-right: auto;
+      margin-left: auto;
       padding: 20px;
     }
 
-    img { max-width: 100%; }
-    h1 { font-size: 34px; }
-    h1.title { font-size: 38px; }
-    h2 { font-size: 24px; margin-top: 30px; }
-    h3 { font-size: 24px; }
-    p { font-size: 16px; line-height: 1.6; }
+    .main-container a {
+      color: #333;
+      text-decoration: none;
+    }
 
-    /* Navbar matches index.html */
+    .main-container a:hover,
+    .main-container a:focus {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 34px;
+    }
+
+    h1.title {
+      font-size: 38px;
+    }
+
+    h2 {
+      margin-top: 35px;
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Navigation bar */
     .navbar.navbar-default {
-      background-color: transparent;
+      background-color: white;
       border: none;
+      border-bottom: 1px solid #eee;
       z-index: 1000;
     }
 
@@ -53,114 +79,324 @@
       color: #333;
     }
 
-    .navbar.navbar-default .navbar-nav > li > a:hover {
+    .navbar.navbar-default .navbar-nav > li > a:hover,
+    .navbar.navbar-default .navbar-nav > li > a:focus {
       color: #000;
     }
 
-    /* Spacer pushes content below navbar */
+    .navbar-default .navbar-toggle {
+      border-color: #aaa;
+    }
+
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+      background-color: #f5f5f5;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+      background-color: #333;
+    }
+
     .spacer {
       height: 60px;
+    }
+
+    .research-entry {
+      margin-bottom: 28px;
+    }
+
+    .paper-title {
+      font-weight: bold;
+    }
+
+    .coauthors {
+      margin-top: 3px;
+    }
+
+    .abstract {
+      margin-top: 12px;
+    }
+
+    .publication-details {
+      margin-top: 3px;
+    }
+
+    @media (max-width: 767px) {
+      .main-container {
+        width: 100%;
+        padding: 15px 20px;
+      }
+
+      .navbar-header {
+        float: none;
+      }
+
+      .navbar-toggle {
+        display: block;
+        margin-right: 15px;
+      }
+
+      .navbar-collapse {
+        overflow-x: visible;
+        background-color: white;
+        border-top: 1px solid #ddd;
+        box-shadow: none;
+      }
+
+      .navbar-collapse.collapse {
+        display: none !important;
+      }
+
+      .navbar-collapse.collapse.in {
+        display: block !important;
+      }
+
+      .navbar-nav {
+        float: none !important;
+        margin: 0;
+      }
+
+      .navbar-nav > li {
+        float: none;
+      }
+
+      .navbar-nav > li > a {
+        padding: 14px 20px;
+      }
+
+      .navbar-right {
+        float: none !important;
+        margin: 0;
+      }
+
+      .spacer {
+        height: 50px;
+      }
+
+      h1 {
+        margin-top: 30px;
+        font-size: 32px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
     }
   </style>
 </head>
 
 <body>
 
- <!-- Navigation Bar -->
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
+
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#navbar"
+          aria-expanded="false"
+          aria-controls="navbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
+
         <a class="navbar-brand" href="index.html">Paula Dastres</a>
       </div>
+
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="index.html">About Me</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="media.html">In the Media</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="files/paula_dastres_cv.pdf">CV</a></li>
+          <li>
+            <a href="index.html">About Me</a>
+          </li>
+          <li class="active">
+            <a href="research.html">Research</a>
+          </li>
+          <li>
+            <a href="media.html">In the Media</a>
+          </li>
+          <li>
+            <a href="teaching.html">Teaching</a>
+          </li>
+          <li>
+            <a href="files/paula_dastres_cv.pdf">CV</a>
+          </li>
         </ul>
+
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="mailto:dastresgalla@wisc.edu"><span class="fa fa-envelope fa-lg"></span></a></li>
+          <li>
+            <a
+              href="mailto:dastresgalla@wisc.edu"
+              aria-label="Email Paula Dastres"
+            >
+              <span class="fa fa-envelope fa-lg" aria-hidden="true"></span>
+            </a>
+          </li>
         </ul>
       </div>
-    </div>
-  </div>
 
-  <!-- Push content below fixed navbar -->
+    </div>
+  </nav>
+
   <div class="spacer"></div>
 
-<!-- Main Content -->
-<div class="container-fluid main-container">
-  <h1>Research</h1>
+  <!-- Main content -->
+  <main class="container-fluid main-container">
 
-  <h2>Working Papers</h2>
+    <h1>Research</h1>
 
-<p>
-  <strong>
-    <a href="files/how_do_we_teach_emotions.pdf" target="_blank">
-      How do we teach emotions? Representation in Children’s Textbooks and Literature
-    </a>
-  </strong><br>
-  With Anjali Adukia, Matthew Bonci, Emileigh Harrison, Jake Nicoll, and Teodora Szasz.
-</p>
+    <section>
+      <h2>Working Papers</h2>
 
-<p>
-  <em>Abstract:</em> 
-  Emotional intelligence is a key component of human capital, shaped in part by the educational materials children consume. 
-  These materials send messages about the emotional reactions that are and are not socially appropriate. In this study, 
-  we apply natural language processing and computer vision tools to examine the emotional representations conveyed in the 
-  text and images of influential educational materials: public school elementary textbooks and award winning children’s literature. 
-  Our analysis reveals a stark mismatch between the emotions children read about and the ones they see in images. We find that textual 
-  context exposes children to a diverse emotional landscape, including happiness, sadness, anger, and calm, all with relatively 
-  balanced frequency. In contrast, pictured characters overwhelmingly display happiness and calm, while ``negatively’’ valenced emotions 
-  rarely appear. This pattern persists across time, genre categories, and demographic subgroups in our corpus. Using individual-level
-  book purchases and library inventory data, we provide evidence that the overrepresentation of happy and calm emotions in visual 
-  content reflect supply-side responses to consumer preferences.
-</p>
+      <div class="research-entry">
+        <p>
+          <a
+            class="paper-title"
+            href="files/how_do_we_teach_emotions.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            How Do We Teach Emotions? Representation in Children’s Textbooks and Literature
+          </a>
+          <br>
+          <span class="coauthors">
+            With Anjali Adukia, Matthew Bonci, Emileigh Harrison, Jake Nicoll,
+            and Teodora Szasz.
+          </span>
+        </p>
 
-<h2 style="margin-top: 40px;">Other Publications</h2>
+        <p class="abstract">
+          <em>Abstract:</em>
+          Emotional intelligence is a key component of human capital, shaped
+          in part by the educational materials children consume. These
+          materials send messages about the emotional reactions that are and
+          are not socially appropriate. In this study, we apply natural
+          language processing and computer vision tools to examine the
+          emotional representations conveyed in the text and images of
+          influential educational materials: public school elementary
+          textbooks and award-winning children’s literature. Our analysis
+          reveals a stark mismatch between the emotions children read about
+          and those they see in images. We find that textual context exposes
+          children to a diverse emotional landscape, including happiness,
+          sadness, anger, and calm, all with relatively balanced frequency. In
+          contrast, pictured characters overwhelmingly display happiness and
+          calm, while negatively valenced emotions rarely appear. This pattern
+          persists across time, genre categories, and demographic subgroups in
+          our corpus. Using individual-level book purchases and library
+          inventory data, we provide evidence that the overrepresentation of
+          happy and calm emotions in visual content reflects supply-side
+          responses to consumer preferences.
+        </p>
+      </div>
+    </section>
 
-<p><strong>
-  <a href="files/migration_in_settlements_chile.pdf" target="_blank">
-    The Migration Phenomenon in Informal Housing Settlements: Challenges for Urban Public Policies in Chile
-  </a></strong><br>
-  With Ray Anderson, Florencia Vergara, Ignacio Silva, Paz Zuñiga, and Pia Palacios (Spanish) <br>
-  DOI: 10.7764/plan.051.113
-</p>
+    <section>
+      <h2>Other Publications</h2>
 
-<p><strong>
-  <a href="files/feminism_liberalism_science.pdf" target="_blank">
-    The Common Rationality of Liberalism and Science through the Feminist Lens
-  </a></strong><br>
-  With Cristóbal Bellolio (Spanish) <br>
-  https://doi.org/10.29393/At526-5RCDB20005
-</p>
+      <div class="research-entry">
+        <p>
+          <a
+            class="paper-title"
+            href="files/migration_in_settlements_chile.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            The Migration Phenomenon in Informal Housing Settlements:
+            Challenges for Urban Public Policies in Chile
+          </a>
+          <br>
+          <span class="publication-details">
+            With Ray Anderson, Florencia Vergara, Ignacio Silva, Paz Zuñiga,
+            and Pia Palacios. Spanish.
+            <br>
+            DOI: 10.7764/plan.051.113
+          </span>
+        </p>
+      </div>
 
-<p><strong>
-  <a href="files/women_exclusion_in_settlements_chile.pdf" target="_blank">
-    Towards a New Dawn: Trajectories of Exclusion of Women Living in Informal Housing Settlements in Chile
-  </a></strong><br>
-  With Florencia Vergara, Paz Zuñiga, and Pia Palacios (Spanish)
-</p>
+      <div class="research-entry">
+        <p>
+          <a
+            class="paper-title"
+            href="files/feminism_liberalism_science.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            The Common Rationality of Liberalism and Science through the
+            Feminist Lens
+          </a>
+          <br>
+          <span class="publication-details">
+            With Cristóbal Bellolio. Spanish.
+            <br>
+            DOI: 10.29393/At526-5RCDB20005
+          </span>
+        </p>
+      </div>
 
-<p><strong>
-  <a href="files/housing_affordability_chile.pdf" target="_blank">
-    The Growing Problem of Housing Affordability in Chile
-  </a></strong><br>
-  With Ray Anderson (Spanish)
-</p>
+      <div class="research-entry">
+        <p>
+          <a
+            class="paper-title"
+            href="files/women_exclusion_in_settlements_chile.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Towards a New Dawn: Trajectories of Exclusion of Women Living in
+            Informal Housing Settlements in Chile
+          </a>
+          <br>
+          <span class="publication-details">
+            With Florencia Vergara, Paz Zuñiga, and Pia Palacios. Spanish.
+          </span>
+        </p>
+      </div>
 
-<p><strong>
-  <a href="files/quantitative_deficit_chile.pdf" target="_blank">
-    Quantitative Housing Deficit in Chile
-  </a></strong><br>
-  With Pia Palacios (Spanish)
-</p>
+      <div class="research-entry">
+        <p>
+          <a
+            class="paper-title"
+            href="files/housing_affordability_chile.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            The Growing Problem of Housing Affordability in Chile
+          </a>
+          <br>
+          <span class="publication-details">
+            With Ray Anderson. Spanish.
+          </span>
+        </p>
+      </div>
 
+      <div class="research-entry">
+        <p>
+          <a
+            class="paper-title"
+            href="files/quantitative_deficit_chile.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Quantitative Housing Deficit in Chile
+          </a>
+          <br>
+          <span class="publication-details">
+            With Pia Palacios. Spanish.
+          </span>
+        </p>
+      </div>
+    </section>
 
-  
-</div>
+  </main>
+
+  <!-- Scripts: jQuery must load before Bootstrap -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+
+</body>
+</html>
